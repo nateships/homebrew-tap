@@ -1,16 +1,11 @@
 # nateships Homebrew tap
 
-Formulae and casks for apps published under [nateships](https://github.com/nateships).
-
-```sh
-brew tap nateships/tap
-```
+Casks for apps published under [nateships](https://github.com/nateships).
 
 | App | Install | Source |
 | --- | --- | --- |
-| [Rolle](https://getrolle.com) desktop app | `brew install --cask nateships/tap/rolle` | [nateships/rolle](https://github.com/nateships/rolle) |
-| Rolle CLI | `brew install --cask nateships/tap/rolle-cli` | [nateships/rolle](https://github.com/nateships/rolle) |
+| [rolle](https://getrolle.com) | `brew install --cask nateships/tap/rolle` | [nateships/rolle](https://github.com/nateships/rolle) |
 
-Casks use the bare app name. Command-line casks use `<app>-cli`.
+The rolle cask installs the desktop app and links the `rolle` command that ships inside it.
 
-Each app's release workflow writes its own files here when a release is published. Do not edit them by hand.
+Each app's release workflow bumps its cask here when a release is published.
