@@ -1,0 +1,34 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions: {}
+
+jobs:
+  audit:
+    runs-on: macos-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: Homebrew/actions/setup-homebrew@49d03f1bf5d455a413dfbdf99e6718054a4cd975 # 2026-09-11
+        with:
+          test-bot: false
+      - name: Tap this checkout
+        run: brew tap nateships/tap "$GITHUB_WORKSPACE"
+      # The tap is empty until the first release lands; the job passes with
+      # nothing to check.
+      - name: Style and audit
+        run: |
+          shopt -s nullglob
+          casks=(Casks/*.rb)
+          formulae=(Formula/*.rb)
+          if [ ${#casks[@]} -eq 0 ] && [ ${#formulae[@]} -eq 0 ]; then
+            echo "Nothing to check yet."
+            exit 0
+          fi
+          brew style nateships/tap
+          for f in "${casks[@]}"; do brew audit --cask --strict --online "nateships/tap/$(basename "$f" .rb)"; done
+          for f in "${formulae[@]}"; do brew audit --formula --strict --online "nateships/tap/$(basename "$f" .rb)"; done
