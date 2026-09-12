@@ -16,10 +16,8 @@ jobs:
       - uses: Homebrew/actions/setup-homebrew@49d03f1bf5d455a413dfbdf99e6718054a4cd975 # 2026-09-11
         with:
           test-bot: false
-      - name: Tap this checkout
-        run: brew tap nateships/tap "$GITHUB_WORKSPACE"
-      # The tap is empty until the first release lands; the job passes with
-      # nothing to check.
+      # setup-homebrew taps this repository itself. The tap is empty until the
+      # first release lands; the job passes with nothing to check.
       - name: Style and audit
         run: |
           shopt -s nullglob
