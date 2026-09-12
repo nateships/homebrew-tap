@@ -11,6 +11,9 @@ cask "rolle" do
   depends_on macos: :monterey
 
   app "Rolle.app"
+  binary "#{appdir}/Rolle.app/Contents/Helpers/rolle"
+  generate_completions_from_executable "#{appdir}/Rolle.app/Contents/Helpers/rolle", "completion",
+                                       shells: [:bash, :zsh, :fish]
 
   # The app stores its files in the XDG directories, which on macOS
   # resolve under ~/Library. The dot paths cover XDG_* overrides.
