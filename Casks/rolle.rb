@@ -1,6 +1,6 @@
 cask "rolle" do
-  version "0.1.3"
-  sha256 "3b264f04e86311520e41fe28f146e77687e69c8cd49f81eab0cff634d89139aa"
+  version "0.1.4"
+  sha256 "30aaa93cde0d62dbd94f68963d483697e20cb0fa2501f4f74d0b91a4b9ae25b6"
 
   url "https://github.com/nateships/rolle/releases/download/v#{version}/rolle.dmg"
   name "rolle"
