@@ -13,7 +13,7 @@ jobs:
     permissions:
       contents: read
     steps:
-      - uses: Homebrew/actions/setup-homebrew@49d03f1bf5d455a413dfbdf99e6718054a4cd975 # 2026-09-11
+      - uses: Homebrew/actions/setup-homebrew@49d03f1bf5d455a413dfbdf99e6718054a4cd975 # master
       # setup-homebrew taps this repository itself.
       - name: Style and audit
         run: |
