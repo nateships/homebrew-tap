@@ -1,6 +1,6 @@
 cask "sleepbar" do
-  version "1.3.1"
-  sha256 "ce6bc84dca7d653c4771bc761b8d5ca51743ca69d50f12e0b3cafe07285af01c"
+  version "1.4.0"
+  sha256 "34ef9e7fa73806a80e16551526a28d34fee52d0043e4dcf9b42e33b3bd4cd3c5"
 
   url "https://github.com/nateships/sleepbar/releases/download/v#{version}/SleepBar.dmg"
   name "SleepBar"
